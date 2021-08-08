@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <style>
+        .container {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .profile {
+            margin-top: 10%;
+            margin-left: 40%;
+        }
+
+        #imageUpload {
+            display: none;
+        }
+
+        #profileImage {
+            cursor: pointer;
+        }
+
+        #profile-container {
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+        }
+
+        #profile-container img {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="profile">
+        <div id="profile-container">
+            <image id="profileImage"
+                src="https://www.pngkey.com/png/detail/202-2024792_user-profile-icon-png-download-fa-user-circle.png" />
+        </div>
+        <input id="imageUpload" type="file" accept=" image/jpeg" name="profile_photo" placeholder="Photo"
+            required="" capture>
+        <br />
+        <button id="setprofile" style="width: 90px; color: white; background-color: teal;">set   profile</button>
+        <button id="changeprofile" style="width: 90px; color: white; background-color: teal;">change profile</button>
+    </div>
+    </div>
+
+    <script>
+        $("#setprofile").click(function (e) {
+            $("#imageUpload").click();
+        });
+
+        function fasterPreview(uploader) {
+            if (uploader.files && uploader.files[0]) {
+                $('#profileImage').attr('src',
+                    window.URL.createObjectURL(uploader.files[0]));
+            }
+        }
+
+        $("#imageUpload").change(function () {
+            fasterPreview(this);
+        });
+    </script>
+    <script>
+        $("#changeprofile").click(function (e) {
+            $("#imageUpload").click();
+        });
+
+        function fasterPreview(uploader) {
+            if (uploader.files && uploader.files[0]) {
+                $('#profileImage').attr('src',
+                    window.URL.createObjectURL(uploader.files[0]));
+            }
+        }
+
+        $("#imageUpload").change(function () {
+            fasterPreview(this);
+        });
+    </script>
+</body>
+
+</html>
